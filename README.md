@@ -27,6 +27,7 @@ Current release info
 
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-human--readable-green.svg)](https://anaconda.org/conda-forge/human-readable) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/human-readable.svg)](https://anaconda.org/conda-forge/human-readable) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/human-readable.svg)](https://anaconda.org/conda-forge/human-readable) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/human-readable.svg)](https://anaconda.org/conda-forge/human-readable) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-human__readable-green.svg)](https://anaconda.org/conda-forge/human_readable) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/human_readable.svg)](https://anaconda.org/conda-forge/human_readable) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/human_readable.svg)](https://anaconda.org/conda-forge/human_readable) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/human_readable.svg)](https://anaconda.org/conda-forge/human_readable) |
 
 Installing human_readable
@@ -39,41 +40,41 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `human_readable` can be installed with `conda`:
+Once the `conda-forge` channel has been enabled, `human-readable, human_readable` can be installed with `conda`:
 
 ```
-conda install human_readable
-```
-
-or with `mamba`:
-
-```
-mamba install human_readable
-```
-
-It is possible to list all of the versions of `human_readable` available on your platform with `conda`:
-
-```
-conda search human_readable --channel conda-forge
+conda install human-readable human_readable
 ```
 
 or with `mamba`:
 
 ```
-mamba search human_readable --channel conda-forge
+mamba install human-readable human_readable
+```
+
+It is possible to list all of the versions of `human-readable` available on your platform with `conda`:
+
+```
+conda search human-readable --channel conda-forge
+```
+
+or with `mamba`:
+
+```
+mamba search human-readable --channel conda-forge
 ```
 
 Alternatively, `mamba repoquery` may provide more information:
 
 ```
 # Search all versions available on your platform:
-mamba repoquery search human_readable --channel conda-forge
+mamba repoquery search human-readable --channel conda-forge
 
-# List packages depending on `human_readable`:
-mamba repoquery whoneeds human_readable --channel conda-forge
+# List packages depending on `human-readable`:
+mamba repoquery whoneeds human-readable --channel conda-forge
 
-# List dependencies of `human_readable`:
-mamba repoquery depends human_readable --channel conda-forge
+# List dependencies of `human-readable`:
+mamba repoquery depends human-readable --channel conda-forge
 ```
 
 
@@ -143,5 +144,7 @@ In order to produce a uniquely identifiable distribution:
 Feedstock Maintainers
 =====================
 
+* [@delucchi-cmu](https://github.com/delucchi-cmu/)
 * [@hombit](https://github.com/hombit/)
+* [@staticdev](https://github.com/staticdev/)
 
