@@ -3,8 +3,8 @@ schema_version: 1
 context:
   version: 2.0.0
 
-package:
-  name: human_readable
+recipe:
+  name: human-readable-pkg
   version: ${{ version }}
 
 source:
@@ -14,27 +14,43 @@ source:
 build:
   number: 0
   noarch: python
-  script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
-requirements:
-  host:
-    - python ${{ python_min }}.*
-    - hatchling
-    - hatch-vcs
-    - pip
-  run:
-    - python >=${{ python_min }}
-
-tests:
-  - python:
-      imports:
-        - human_readable
-  - requirements:
-      run:
-        - pip
+outputs:
+  - package:
+      name: human_readable
+    build:
+      noarch: python
+      script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+    requirements:
+      host:
         - python ${{ python_min }}.*
-    script:
-      - pip check
+        - hatchling
+        - hatch-vcs
+        - pip
+      run:
+        - python >=${{ python_min }}
+    tests:
+      - python:
+          imports:
+            - human_readable
+      - requirements:
+          run:
+            - pip
+            - python ${{ python_min }}.*
+        script:
+          - pip check
+
+  - package:
+      name: human-readable
+    build:
+      noarch: generic
+    requirements:
+      run:
+        - ${{ pin_subpackage("human_readable", exact=True) }}
+    tests:
+      - python:
+          imports:
+            - human_readable
 
 about:
   summary: Human Readable
@@ -43,6 +59,7 @@ about:
   homepage: https://github.com/staticdev/human-readable
 
 extra:
+  feedstock-name: human_readable
   recipe-maintainers:
     - delucchi-cmu
     - staticdev
