@@ -1,7 +1,7 @@
 schema_version: 1
 
 context:
-  version: "2.0.1"
+  version: "2.0.2"
 
 recipe:
   name: human_readable
@@ -9,7 +9,7 @@ recipe:
 
 source:
   url: https://pypi.org/packages/source/h/human_readable/human_readable-${{ version }}.tar.gz
-  sha256: ec8932e77b8196fbd0f9440b23c80ffa0964ea76ff965836f604f41ee48b594f
+  sha256: 236b3f86ac547b12b6ca2cea889b781c5e7271e47b98cde2795f3ad99683b3ce
 
 build:
   number: 0
